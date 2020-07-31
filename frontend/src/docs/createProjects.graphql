@@ -1,12 +1,12 @@
-mutation createProjectAndTask {
-  createProject(
-    name: "ABCDE"
-    tags: ["111"]
+mutation createProjectAndTask($projectcode: String!, $tags: [String!]) {
+  createProject (
+    name: $projectcode
+    tags: $tags
   ) {
     code
   },
   createTask(
-    projectCode: "ABCDE"
+    projectCode: $projectcode
     description: "abcde"
     type: CREATIVE
     status: PLANNING
