@@ -11,6 +11,7 @@ import io.leangen.graphql.samples.repo.ProjectRepo;
 import io.leangen.graphql.spqr.spring.annotation.GraphQLApi;
 import org.springframework.stereotype.Service;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -30,7 +31,7 @@ public class ProjectService {
     }
 
     @GraphQLMutation
-    public Project createProject(String name, @GraphQLArgument(name = "tags", defaultValue = "[]") List<String> tags) {
+    public Project createProject(@NotNull String name, @GraphQLArgument(name = "tags", defaultValue = "[]") List<String> tags) {
         return repo.save(name, tags);
     }
 
