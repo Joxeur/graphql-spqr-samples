@@ -26,7 +26,7 @@ public class ProjectService {
 
     @GraphQLQuery
     public Project project(String code) {
-        return repo.byCode(code);
+        return code == null ? null : repo.byCode(code);
     }
 
     @GraphQLMutation

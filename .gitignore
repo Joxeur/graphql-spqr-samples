@@ -5,6 +5,8 @@
 *.iml
 /lib
 
+node_modules
+
 # OSX
 .DS_Store
 .DS_Store?

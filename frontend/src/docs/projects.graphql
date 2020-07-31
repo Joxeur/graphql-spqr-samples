@@ -1,0 +1,5 @@
+query findProject($code: String) {
+  project(code: $code) {
+    code
+  }
+}

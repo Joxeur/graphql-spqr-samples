@@ -1,0 +1,16 @@
+mutation createProjectAndTask {
+  createProject(
+    name: "ABCDE"
+    tags: ["111"]
+  ) {
+    code
+  },
+  createTask(
+    projectCode: "ABCDE"
+    description: "abcde"
+    type: CREATIVE
+    status: PLANNING
+  ) {
+    code
+  }
+}

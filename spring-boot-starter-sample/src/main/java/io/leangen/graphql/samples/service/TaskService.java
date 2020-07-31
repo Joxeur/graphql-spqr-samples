@@ -30,7 +30,11 @@ public class TaskService {
     }
 
     @GraphQLMutation
-    public Task createTask(String projectCode, String description, @GraphQLArgument(name = "status", defaultValue = "\"PLANNING\"") Status status, Type type) {
+    public Task createTask(
+            String projectCode,
+            String description,
+            @GraphQLArgument(name = "status", defaultValue = "\"PLANNING\"") Status status,
+            Type type) {
         return repo.saveTask(projectCode, description, status, type);
     }
 
